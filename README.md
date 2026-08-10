@@ -49,7 +49,7 @@ To ensure that your download has not been tampered with, you can verify the SHA-
 
 | File Name | Target Platform | SHA-256 Hash |
 | :--- | :--- | :--- |
-| **`DashCam_RoadPrivacy_v1.1.0_win64.zip`** | Windows 10/11 x64 | `PENDING_BUILD_HASH` |
+| **`DashCam_RoadPrivacy_v1.1.0_win64.zip`** | Windows 10/11 x64 | `8230657350c91bc79d515635bb288ac77c5fdc9cc6b98e99f6193c1bc7fb8665` |
 
 ### Verifying Hashes in Windows PowerShell:
 
