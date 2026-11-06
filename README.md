@@ -1,6 +1,6 @@
 # DashCam RoadPrivacy
 
-[![Release Version](https://img.shields.io/badge/Release-v1.1.0-electriccyan?style=for-the-badge&logo=github)](https://github.com/engstaNET/DashCam_RoadPrivacy/releases)
+[![Release Version](https://img.shields.io/badge/Release-v2.0.0-electriccyan?style=for-the-badge&logo=github)](https://github.com/engstaNET/DashCam_RoadPrivacy/releases)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20x64-blue?style=for-the-badge&logo=windows)](https://github.com/engstaNET/DashCam_RoadPrivacy)
 [![License](https://img.shields.io/badge/License-Freeware-green?style=for-the-badge)](LICENSE)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Local%20%2F%20Offline-success?style=for-the-badge)](PRIVACY.md)
@@ -13,30 +13,35 @@
 
 ## 🌟 Key Features
 
-- **⚡ Dual AI Engine Detection:**
-  - **License Plates:** Dedicated deep learning **RT-DETRv2 ONNX** model combined with multi-stage YOLOv8 and Haar Cascade verification for high-precision country-neutral automotive plate detection.
-  - **Faces:** Ultra-fast OpenCV YuNet DNN Face Detector tuned for distant and small faces in public street scenes.
-- **🚀 GPU Hardware Acceleration:** Microsoft DirectML & ONNX Runtime support for NVIDIA, AMD, and Intel GPUs, plus multi-threaded CPU fallback.
-- **✏️ Interactive Manual-Processing Mode:** Frame-by-frame manual redaction tool allowing custom bounding boxes and shapes with instant timeline scrubbing and synchronization.
+- **🎯 Vehicle-Restricted License Plate Detection:**
+  - **YOLOv8 & RT-DETRv2 Pipeline:** YOLOv8 identifies vehicles first; RT-DETRv2 ONNX scans vehicle regions exclusively to eliminate background false positives on pavement, walls, and road markings.
+  - **1080p Detail Tiles:** Alternating high-resolution detail passes double detection recall for distant and parked vehicle plates on 1080p+ footage.
+  - **Look-Behind Redaction:** Frames are buffered to ensure plates and faces are redacted even before detection confirmation thresholds are met.
+- **⚡ Face Detection:**
+  - Ultra-fast OpenCV YuNet DNN Face Detector tuned for distant and small faces in public street scenes.
+- **🚀 GPU Hardware Acceleration & Auto-Benchmarking:**
+  - Microsoft DirectML & ONNX Runtime support for NVIDIA, AMD, and Intel GPUs.
+  - Startup benchmark automatically evaluates DirectML vs. CPU cores and selects the fastest provider.
+- **✏️ Interactive Manual-Processing Mode:**
+  - Keyframe-based timeline editor with automated CSRT tracking, backward tracking, jump/end/delete, and manual test detection.
 - **🔒 100% Local & Private:** Runs entirely offline on your PC. No internet connection required, zero cloud uploads, and zero telemetry.
-- **✂️ Lossless Stream-Copy Video Trimming:** Keyframe-aligned sub-second fast trim without video re-encoding when cutting.
-- **🎛️ Anonymization Customization:**
-  - **Redaction Modes:** Gaussian Blur, Mosaic Pixelation, and Solid Blackout.
-  - **Adjustable Controls:** Dynamic confidence thresholding and blur intensity sliders.
+- **✂️ Lossless Stream-Copy Video Trimming:** Keyframe-aligned sub-second fast trim without video re-encoding when cutting clips.
+- **🎬 Single-Pass Video Compression:**
+  - Direct FFmpeg streaming into NVIDIA NVENC, Intel QSV, AMD AMF, or multi-threaded CPU libx264.
+  - Redaction modes: Gaussian Blur, Mosaic Pixelation, and Solid Blackout.
 - **🛡️ Metadata Stripping & Audio Control:** Strip EXIF/GPS telemetry metadata and optionally mute or preserve audio tracks.
-- **🎬 Branded Outro Sequence:** Appends a clean 2-second branded closing screen with centered logo at video resolution.
 - **📦 Portable Standalone Executable:** Self-contained package bundling FFmpeg and all AI models. No Python installation or external dependencies required. Simply download, extract, and run.
 
 ---
 
 ## 📥 Download & Installation
 
-### Latest Release: **v1.1.0**
+### Latest Release: **v2.0.0**
 
 1. Go to the [Releases](https://github.com/engstaNET/DashCam_RoadPrivacy/releases) page.
-2. Download `DashCam_RoadPrivacy_v1.1.0_win64.zip`.
-3. Extract the ZIP archive to any directory on your PC.
-4. Launch `RoadPrivacy_v1.1.0.exe`.
+2. Download `DashCam_RoadPrivacy_v2.0.0_win64.zip` (Portable ZIP) or `RoadPrivacy_v2.0.0.exe` (Single Standalone Executable).
+3. If using the ZIP archive, extract it to any directory on your PC.
+4. Launch `RoadPrivacy_v2.0.0.exe`.
 
 > **Note for Windows Defender / SmartScreen:**  
 > Since the executable is freshly built and self-signed, Windows Defender SmartScreen may show an informational warning. Click **More info** -> **Run anyway**.
@@ -49,12 +54,13 @@ To ensure that your download has not been tampered with, you can verify the SHA-
 
 | File Name | Target Platform | SHA-256 Hash |
 | :--- | :--- | :--- |
-| **`DashCam_RoadPrivacy_v1.1.0_win64.zip`** | Windows 10/11 x64 | `8230657350c91bc79d515635bb288ac77c5fdc9cc6b98e99f6193c1bc7fb8665` |
+| **`DashCam_RoadPrivacy_v2.0.0_win64.zip`** | Windows 10/11 x64 (Portable ZIP) | `674044f17867bfbedfd7493b15ecbf4f7f0209ff0992581355a03fe43483cc69` |
+| **`RoadPrivacy_v2.0.0.exe`** | Windows 10/11 x64 (Standalone EXE) | `987e06809f268055f4bac4d68431b2e57eb4ba4a03ea686d65e7eb2f8f3bcafc` |
 
 ### Verifying Hashes in Windows PowerShell:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\DashCam_RoadPrivacy_v1.1.0_win64.zip
+Get-FileHash -Algorithm SHA256 .\DashCam_RoadPrivacy_v2.0.0_win64.zip
 ```
 
 ---

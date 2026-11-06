@@ -1,1 +1,2 @@
-8230657350c91bc79d515635bb288ac77c5fdc9cc6b98e99f6193c1bc7fb8665  DashCam_RoadPrivacy_v1.1.0_win64.zip
+674044f17867bfbedfd7493b15ecbf4f7f0209ff0992581355a03fe43483cc69  DashCam_RoadPrivacy_v2.0.0_win64.zip
+987e06809f268055f4bac4d68431b2e57eb4ba4a03ea686d65e7eb2f8f3bcafc  RoadPrivacy_v2.0.0.exe
