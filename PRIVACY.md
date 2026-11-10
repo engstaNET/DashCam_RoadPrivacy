@@ -1,16 +1,12 @@
-# Privacy Statement
+# Privacy
 
-## 100% Offline & Local Processing Guarantee
+DashCam RoadPrivacy processes your videos on your own computer.
 
-**DashCam RoadPrivacy** was built with privacy as its fundamental core requirement.
+- Decoding, detection, blurring, encoding and metadata removal all happen locally. Nothing is uploaded.
+- The app has no telemetry, analytics or update check.
+- No internet connection is needed to process videos. The release package already contains all models. Only if a model file is missing does the app try to download it from its original source (GitHub or Hugging Face). No video data is sent in that case either.
+- Your footage, location data and timestamps stay on your machine.
 
-- **Zero Cloud Uploads:** All video decoding, AI object detection, face and license plate anonymization, video encoding, and metadata stripping take place **100% locally** on your personal computer.
-- **Zero Telemetry or Analytics:** The application contains **no tracking scripts, telemetry, phone-home features, or user analytics**.
-- **No Internet Required:** The application does not require an active internet connection to process videos.
-- **Data Sovereignty:** Your dashcam footage, personal location data, timestamps, and video contents never leave your machine.
+## Checking your download
 
----
-
-## File Integrity & Safety
-
-We publish official SHA-256 cryptographic hashes for all released binaries on our [GitHub Releases](https://github.com/engstaNET/DashCam_RoadPrivacy/releases) page so you can independently verify that your executable has not been altered or tampered with.
+SHA-256 checksums for every release are listed on the [Releases](https://github.com/engstaNET/DashCam_RoadPrivacy/releases) page and in [SHA256SUMS.txt](SHA256SUMS.txt), so you can check that the file has not been changed.
